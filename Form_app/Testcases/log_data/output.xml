@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2 (Python 3.9.1 on win32)" generated="2025-02-13T17:50:47.876481" rpa="false" schemaversion="5">
+<suite id="s1" name="Tc" source="C:\Users\jetsada.b\Desktop\Form_app\Testcases\tc.robot">
+<test id="s1-t1" name="TC01 - Sign In On Form Application" line="5">
+<kw name="Sign-Up Information And Capture Unable Pop-up" owner="signin_feature">
+<kw name="Open Form Application" owner="commom_keyword">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>remote_url=http://localhost:4723/wd/hub</arg>
+<arg>deviceName=Test Device</arg>
+<arg>platformVersion=15.0</arg>
+<arg>platformName=Android</arg>
+<arg>appPackage=dev.flutter.formApp.form_app</arg>
+<arg>appActivity=dev.flutter.formApp.form_app.MainActivity</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.1/cli/args/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2025-02-13T17:50:48.083275" elapsed="13.660963"/>
+</kw>
+<status status="PASS" start="2025-02-13T17:50:48.082265" elapsed="13.661973"/>
+</kw>
+<kw name="Tap Menu Sign-In With HTTP" owner="menu_page">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-02-13T17:51:02.741466" level="INFO">xpath criteria: //android.view.View[@content-desc="ThisIsTest"][1]</msg>
+<arg>${signin}</arg>
+<arg>${global_timeout}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-02-13T17:51:01.744238" elapsed="0.997228"/>
+</kw>
+<kw name="Tap" owner="AppiumLibrary">
+<msg time="2025-02-13T17:51:02.741466" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2025-02-13T17:51:02.978888" level="INFO">xpath criteria: //android.view.View[@content-desc="ThisIsTest"][1]</msg>
+<arg>${signin}</arg>
+<doc>*DEPRECATED!!* Since selenium v4, use `Tap With Positions` keyword.</doc>
+<status status="PASS" start="2025-02-13T17:51:02.741466" elapsed="0.237422"/>
+</kw>
+<status status="PASS" start="2025-02-13T17:51:01.744238" elapsed="1.234650"/>
+</kw>
+<kw name="Fill Form With Email And Password" owner="signin_page">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-02-13T17:51:04.408409" level="INFO">xpath criteria: //android.view.View[2]/android.widget.EditText[1]
+xpath criteria: //android.view.View[2]/android.widget.EditText[1]</msg>
+<arg>${email}</arg>
+<arg>${global_timeout}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-02-13T17:51:02.978888" elapsed="1.429521"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-02-13T17:51:04.409404" level="INFO">Typing text 'AutoMoblie000@gmail.com' into text field '//android.view.View[2]/android.widget.EditText[1]'</msg>
+<msg time="2025-02-13T17:51:04.459769" level="INFO">xpath criteria: //android.view.View[2]/android.widget.EditText[1]</msg>
+<arg>${email}</arg>
+<arg>${signin_email}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2025-02-13T17:51:04.408409" elapsed="0.051360"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-02-13T17:51:04.504020" level="INFO">xpath criteria: //android.view.View[2]/android.widget.EditText[2]</msg>
+<arg>${password}</arg>
+<arg>${global_timeout}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-02-13T17:51:04.459769" elapsed="0.044251"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-02-13T17:51:04.505030" level="INFO">Typing text 'Auto123*' into text field '//android.view.View[2]/android.widget.EditText[2]'</msg>
+<msg time="2025-02-13T17:51:05.175570" level="INFO">xpath criteria: //android.view.View[2]/android.widget.EditText[2]</msg>
+<arg>${password}</arg>
+<arg>${signin_password}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2025-02-13T17:51:04.504020" elapsed="0.671550"/>
+</kw>
+<kw name="Tap" owner="AppiumLibrary">
+<msg time="2025-02-13T17:51:05.175570" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<arg>${signin_btn}</arg>
+<doc>*DEPRECATED!!* Since selenium v4, use `Tap With Positions` keyword.</doc>
+<status status="PASS" start="2025-02-13T17:51:05.175570" elapsed="0.890094"/>
+</kw>
+<status status="PASS" start="2025-02-13T17:51:02.978888" elapsed="3.086776"/>
+</kw>
+<kw name="Display Unable To Sign-In Modal" owner="modalpop_page">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-02-13T17:51:06.103596" level="INFO">xpath criteria: //android.view.View[@content-desc="Dismiss"]/android.view.View/android.view.View</msg>
+<arg>${capture_screen}</arg>
+<arg>${global_timeout}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-02-13T17:51:06.066658" elapsed="0.036938"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-13T17:51:06.103596" level="INFO">${screenshot_path} = modal_popup.png</msg>
+<var>${screenshot_path}</var>
+<arg>modal_popup.png</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-13T17:51:06.103596" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="AppiumLibrary">
+<msg time="2025-02-13T17:51:06.416382" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="modal_popup.png"&gt;&lt;img src="modal_popup.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${screenshot_path}</arg>
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<status status="PASS" start="2025-02-13T17:51:06.103596" elapsed="0.312786"/>
+</kw>
+<kw name="Tap" owner="AppiumLibrary">
+<msg time="2025-02-13T17:51:06.417383" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<arg>${OK_button_modal}</arg>
+<doc>*DEPRECATED!!* Since selenium v4, use `Tap With Positions` keyword.</doc>
+<status status="PASS" start="2025-02-13T17:51:06.417383" elapsed="0.759161"/>
+</kw>
+<status status="PASS" start="2025-02-13T17:51:06.065664" elapsed="1.110880"/>
+</kw>
+<status status="PASS" start="2025-02-13T17:50:48.082265" elapsed="19.094279"/>
+</kw>
+<tag>SignIn</tag>
+<status status="PASS" start="2025-02-13T17:50:48.081256" elapsed="19.095288"/>
+</test>
+<status status="PASS" start="2025-02-13T17:50:47.878479" elapsed="19.299063"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">SignIn</stat>
+</tag>
+<suite>
+<stat name="Tc" id="s1" pass="1" fail="0" skip="0">Tc</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-02-13T17:50:48.069208" level="ERROR">Error in file 'C:\Users\jetsada.b\Desktop\Form_app\import.robot' on line 4: Importing library 'YAML' failed: ModuleNotFoundError: No module named 'YAML'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\jetsada.b\AppData\Local\Programs\Python\Python39\Scripts\robot.exe
+  c:\users\jetsada.b\appdata\local\programs\python\python39\python39.zip
+  c:\users\jetsada.b\appdata\local\programs\python\python39\DLLs
+  c:\users\jetsada.b\appdata\local\programs\python\python39\lib
+  c:\users\jetsada.b\appdata\local\programs\python\python39
+  c:\users\jetsada.b\appdata\local\programs\python\python39\lib\site-packages</msg>
+<msg time="2025-02-13T17:50:48.076768" level="WARN">Imported resource file 'C:\Users\jetsada.b\Desktop\Form_app\Resources\locatores\ios\home_page_locator.robot' is empty.</msg>
+<msg time="2025-02-13T17:51:02.741466" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2025-02-13T17:51:05.175570" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+<msg time="2025-02-13T17:51:06.417383" level="WARN">Keyword 'AppiumLibrary.Tap' is deprecated. Since selenium v4, use `Tap With Positions` keyword.</msg>
+</errors>
+</robot>
